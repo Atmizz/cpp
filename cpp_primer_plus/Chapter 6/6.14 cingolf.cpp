@@ -1,0 +1,31 @@
+// cingolf.cpp -- non-numeric input skipped
+#include <iostream>
+
+using std :: cin;
+using std :: cout;
+using std :: endl;
+
+const int Max = 5;
+
+int main() {
+  int golf[Max];
+  cout << "Please enter your golf scores.\n";
+  cout << "You must enter " << Max << " rounds.\n";
+  for(int i = 0; i < Max; ++ i) {
+    cout << "round #" << i + 1 << ": ";
+    while(!(cin >> golf[i])) {
+      cin.clear();
+      while(cin.get() != '\n') {
+        continue ;
+      }
+      cout << "Please enter a number: ";
+    }
+  }
+  double total = 0.0;
+  for(int i = 0; i < Max; ++ i) {
+    total += golf[i];
+  }
+  cout << "Total score: " << total << endl;
+  cout << "Average score: " << total / Max << endl;
+  return 0;
+}
