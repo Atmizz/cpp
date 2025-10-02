@@ -1,7 +1,6 @@
-// stock00.h -- Stock class interface
-// version 00
-#ifndef STOCK00_H_
-#define STOCK00_H_
+// stock10.h -- Stock class declaration with constructors, destructor added
+#ifndef STOCK10_H_
+#define STOCK10_H_
 
 #include <string>
 
@@ -17,6 +16,9 @@ private:
     total_val = shares * share_val;
   }
 public:
+  Stock();
+  Stock(const string &co, long n = 0, double pr = 0.0);
+  ~Stock();
   void acquire(const string &co, long n, double pr);
   void buy(long num, double price);
   void sell(long num, double price);
